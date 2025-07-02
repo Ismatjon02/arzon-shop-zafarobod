@@ -273,7 +273,7 @@ function renderFavoriteProducts() {
             const product = allProducts.find(p => p.id === productId);
             if (product) {
                 currentOrderingProduct = product;
-                orderProductImage.src = product.image;
+                orderProductImage.src = "arzon-shop-zafarobod/" + product.image;
                 orderProductName.textContent = product.name;
                 document.getElementById('customer-phone').value = '';
                 document.getElementById('customer-comment').value = '';
