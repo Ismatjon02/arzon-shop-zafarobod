@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "name": "Vicco krisofka",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block"
+  },
+  {
+    "id": 2,
+    "name": "Dazmol",
+    "price": 350000,
+    "discount": 5,
+    "category": "uy",
+    "image": "images/house/dazmol.png",
+    "isFavorite": false,
+    "type": "slider"
+  },
+  {
+    "id": 3,
+    "name": "Ayollar sumkasi",
+    "price": 280000,
+    "discount": 0,
+    "category": "ayollar",
+    "image": "images/sumka.jpg",
+    "isFavorite": false,
+    "type": "video",
+    "videoUrl": "videos/ayollar_sumka.mp4"
+  },
+  {
+    "id": 4,
+    "name": "Ayolar Futbolkasi",
+    "price": 500000,
+    "discount": 15,
+    "category": "ayollar",
+    "image": "images/she/футболка.png",
+    "isFavorite": false,
+    "type": "block"
+  },
+  {
+    "id": 5,
+    "name": "Патинка",
+    "price": 80000,
+    "discount": 0,
+    "category": "erkaklar",
+    "image": "images/she/Патинка.jpg",
+    "isFavorite": false,
+    "type": "block"
+  },
+  {
+    "id": 6,
+    "name": "Yotoq xonasi mebeli",
+    "price": 3500000,
+    "discount": 20,
+    "category": "sport",
+    "image": "images/yotoqmebel.jpg",
+    "isFavorite": false,
+    "type": "block"
+  }
+]

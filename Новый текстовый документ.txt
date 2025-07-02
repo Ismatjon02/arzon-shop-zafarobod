@@ -1,0 +1,32 @@
+Menga mukamal bir say yasab ber. HTML,CSS,Js dan foydalan.
+
+Navbardi chap tomonida logo va Arzon yozuv  tursin. Navdi urtasida poisk bulsin. Chap tominida hrif asosi, baholash(barcha sertsa ikonkasi bosilgan mahsulotlar blocki bilan shu yerda paydo bulsin), buyurtma beringanlar, biz haqimizda, kategoriya (bosa saytga blokchiqsin. Katagotiyada uygi mahsulotlar, detiski mashsulotlar, Ayolar mahsuloti, Erkaklar mahsuloti, sport mahsulotlari bulsin. Qaysi katagoriyani bosam usha katagoriya mahsuloytlarini chiqar.), kun/tun bulsin.
+
+
+
+Headerda slider bulsin, da 5 surat har 5 secomda boshqa bulsin. 
+
+ Main urtada bulsin. Main ung chap tomonida reklama uchun joy tashla.
+
+Har Blokdi ichida avval img bulsin, img di ustida chaptamonida sertsa ikonkasi bulsin, sertsani bosa baholashga borsin, tagida mahsulot, narxi. Blokdi tagida buyurtma berish tugmas bulsin.
+
+Buyurma berish tugmasini bersa.  Mahsulotdi surati, mahsulotdi nomi, nomer telefonni, komentariyasi WhatsApp ga borsin. Buyurtma berilgan xar mahsulot "buyurtma beringanlar"
+
+navbariga ham saqlanib tursin.
+
+ Bazi blokga mish borsa slider bulsin. Bazi bloklarga vido quy. Bazi blokda narxdi yonida mahsulotdi nechi % arzon bulganini chiqar.
+
+
+
+Foter da WhatsApp,Insteagram,Telegram, nomer telefefon bulsin.
+
+
+
+Saytdi meta shaklini ham tayorla, Notbukda,Planshetda, Telegonga mos kelsin.
+
+
+
+Mahsulotlardi suratini, nomini, % ni, JSON orqali quy. Uzing JSON yasa. 
+
+HTML,CSS,Js dan foydalan. Fremvorklardan, dasturlash tillardidan foydalanma.
+
