@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Ma'lumotlarni yuklash (fetchProducts) ---
     async function fetchProducts() {
         try {
-            const response = await fetch('products.json');
+            const response = await fetch('product-details.json');
             let fetchedProducts = await response.json();
 
             // JSON dagi oxirgi elementni boshiga qo'yish uchun massivni teskari aylantirish
@@ -670,36 +670,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   productsContainer.addEventListener('click', () => {
     // Bu yerda siz yangi ochiladigan sahifa manzilini ko'rsatasiz
-    window.location.href = 'product-details.html'; // o'rniga kerakli sahifa nomini yozing
+    window.location.href = 'index.html'; // o'rniga kerakli sahifa nomini yozing
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
