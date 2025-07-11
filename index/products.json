@@ -1,0 +1,590 @@
+[
+  {
+    "id": 1,
+    "name": "Vicco krisofka",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Детский",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "30",
+    "color": "Qora",
+    "description": "Bolalar uchun qulay va zamonaviy Vicco krossovkasi. Yuqori sifatli materiallardan tayyorlangan.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var2.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Dazmol",
+    "price": 350000,
+    "discount": 5,
+    "category": "uy",
+    "image": "images/house/dazmol.png",
+    "isFavorite": false,
+    "type": "slider",
+    "size": "Standart",
+    "color": "Oq",
+    "description": "Kiyimlar uchun kuchli va tezkor dazmol. Turli xil matolar uchun mos keladi.",
+    "sliderImages": [
+      "images/house/dazmol.png",
+      "images/house/dazmol_v2.png",
+      "images/house/dazmol_v3.png"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Ayollar sumkasi (klassik)",
+    "price": 280000,
+    "discount": 0,
+    "category": "ayollar",
+    "image": "images/sumka.jpg",
+    "isFavorite": false,
+    "type": "video",
+    "videoUrl": "videos/ayollar_sumka.mp4",
+    "size": "Katta",
+    "color": "Jigarrang",
+    "description": "Ayollar uchun zamonaviy va keng sumka. Har qanday kiyimga mos keladi. Yuqori sifatli charm materialdan ishlangan.",
+    "sliderImages": []
+  },
+  {
+    "id": 4,
+    "name": "Ayollar Futbolkasi (yozgi)",
+    "price": 500000,
+    "discount": 15,
+    "category": "ayollar",
+    "image": "images/she/футболка.png",
+    "isFavorite": false,
+    "type": "block",
+    "size": "M",
+    "color": "Qora",
+    "description": "Yozgi mavsum uchun qulay ayollar futbolkasi. Sifatli va nafas oluvchi matodan tayyorlangan.",
+    "sliderImages": [
+      "images/she/футболка.png",
+      "images/she/футболка_v2.png"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Erkaklar Patinkasi",
+    "price": 80000,
+    "discount": 0,
+    "category": "erkaklar",
+    "image": "images/she/Патинка.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "43",
+    "color": "Qora",
+    "description": "Har kunlik foydalanish uchun qulay patinka. Mustahkam va chidamli.",
+    "sliderImages": [
+      "images/she/Патинка.jpg",
+      "images/she/Патинка_v2.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Erkaklar Patinkasi (jigarrang)",
+    "price": 80000,
+    "discount": 0,
+    "category": "erkaklar",
+    "image": "images/she/Патинка.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "44",
+    "color": "Jigarrang",
+    "description": "Boshqa rangdagi patinka. Klassik uslub va yuqori qulaylik.",
+    "sliderImages": [
+      "images/she/Патинка.jpg",
+      "images/she/Патинка_v3.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Yumshoq ayiqcha (bolalar uchun)",
+    "price": 80000,
+    "discount": 0,
+    "category": "Детский",
+    "image": "images/baby/Медвед.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "30 sm",
+    "color": "Jigarrang",
+    "description": "Bolalar uchun yumshoq va yoqimli o'yinchoq ayiqcha. Xavfsiz materiallardan tayyorlangan.",
+    "sliderImages": []
+  },
+  {
+    "id": 8,
+    "name": "Bolalar Futbolkasi (oq)",
+    "price": 80000,
+    "discount": 0,
+    "category": "Детский",
+    "image": "images/baby/Футболка.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "S",
+    "color": "Oq",
+    "description": "Bolalar uchun yozgi oq futbolka. Tabiiy paxtadan ishlangan.",
+    "sliderImages": []
+  },
+  {
+    "id": 9,
+    "name": "Katta yumshoq it (bolalar uchun)",
+    "price": 3500000,
+    "discount": 20,
+    "category": "Детский",
+    "image": "images/baby/malishami.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "Katta",
+    "color": "Oq",
+    "description": "Bolalar uchun yoqimli va katta o'yinchoq it. Tug'ilgan kun sovg'asi uchun ideal.",
+    "sliderImages": [
+      "images/baby/malishami.jpg",
+      "images/baby/malishami_v2.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Kichik yumshoq it (bolalar uchun)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Детский",
+    "image": "images/baby/dog.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "Kichik",
+    "color": "Jigarrang",
+    "description": "Kichik o'lchamli yoqimli o'yinchoq it. Do'stlar uchun ajoyib sovg'a.",
+    "sliderImages": []
+  },
+  {
+    "id": 11,
+    "name": "Vicco krisofka (yangi model)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "28",
+    "color": "Ko'k",
+    "description": "Yangi kelgan bolalar krossovkasi. Sport va kundalik foydalanish uchun.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var3.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Vicco krisofka (pushti)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "29",
+    "color": "Pushti",
+    "description": "Qizlar uchun mos keladigan Vicco krossovkasi. Yoqimli dizayn.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var4.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Vicco krisofka (yashil)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "30",
+    "color": "Yashil",
+    "description": "Yashil rangdagi bolalar krossovkasi. Maktab va o'yinlar uchun a'lo tanlov.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var5.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Vicco krisofka (sariq)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "27",
+    "color": "Sariq",
+    "description": "Sariq rangli, qizlar uchun maxsus Vicco krossovkasi. Yorqin va jozibali.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var6.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Vicco krisofka (to'q ko'k)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "31",
+    "color": "To'q ko'k",
+    "description": "O'g'il bolalar uchun to'q ko'k rangli Vicco krossovkasi. Sport uslubida.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var7.jpg"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Vicco krisofka (kulrang)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "32",
+    "color": "Kulrang",
+    "description": "Kulrangdagi bolalar krossovkasi. Har qanday kiyim bilan mos keladi.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var8.jpg"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Vicco krisofka (qizil)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "26",
+    "color": "Qizil",
+    "description": "O'tgan yilgi kolleksiyadan qizil rangli Vicco krossovkasi. Cheklangan miqdorda.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var9.jpg"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Vicco krisofka (sport uslubi)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "33",
+    "color": "Yashil",
+    "description": "Sport bilan shug'ullanish uchun Vicco krossovkasi. Engil va qulay.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var10.jpg"
+    ]
+  },
+  {
+    "id": 19,  
+    "name": "Vicco krisofka (kundalik foydalanish)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "25",
+    "color": "Binafsha",
+    "description": "Kundalik kiyish uchun qulay Vicco krossovkasi. Yumshoq ichki astar.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_var11.jpg"
+    ]
+  },
+  {
+    "id": 20, 
+    "name": "Vicco krisofka (qishki model)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "bolalar",
+    "image": "images/baby/vicco.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "34",
+    "color": "Qora",
+    "description": "Qish mavsumi uchun issiq Vicco krossovkasi. Suv o'tkazmaydigan material.",
+    "sliderImages": [
+      "images/baby/vicco.jpg",
+      "images/baby/vicco_qishki.jpg"
+    ]
+  },
+  {
+    "id": 21, 
+    "name": "Ayollar Futbolkasi (ayollar)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Женский",
+    "image": "images/she/Женский Футболка.png",
+    "isFavorite": false,
+    "type": "block",
+    "size": "L",
+    "color": "Qizil",
+    "description": "Ayollar uchun zamonaviy qizil futbolka. Sport va kundalik hayot uchun mos.",
+    "sliderImages": [
+      "images/she/Женский Футболка.png",
+      "images/she/Женский Футболka_v2.png"
+    ]
+  },
+  {
+    "id": 22, 
+    "name": "Blender Raf",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Битовой техника",
+    "image": "images/raf.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "Katta",
+    "color": "Kumush",
+    "description": "Oshxona uchun kuchli Raf blenderi. Turli mahsulotlarni aralashtirish va maydalash uchun ideal.",
+    "sliderImages": [
+      "images/raf.jpg",
+      "images/raf_v2.jpg"
+    ]
+  },
+  {
+    "id": 23, 
+    "name": "Futbolka 'Дикий Мужчина'",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Мужской",
+    "image": "images/he/Футболка Дикий Мужчина.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "XL",
+    "color": "Qora",
+    "description": "Erkaklar uchun kiyim, mato sifati juda yaxshi. 'Дикий Мужчина' yozuvi bilan.",
+    "sliderImages": [
+      "images/he/Футболка Дикий Мужчина.jpg",
+      "images/he/Футболка Дикий Мужчина_v2.jpg"
+    ]
+  },
+  {
+    "id": 24, 
+    "name": "Futbolka 'Майами'",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Мужской",
+    "image": "images/he/Футболка Майами.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "L",
+    "color": "Oq",
+    "description": "Mayami dizaynli erkaklar futbolkasi. Yozgi kiyimlar uchun ajoyib tanlov.",
+    "sliderImages": [
+      "images/he/Футболка Майами.jpg",
+      "images/he/Футболка Майами_v2.jpg"
+    ]
+  },
+  {
+    "id": 25, 
+    "name": "Futbolka 'Настоящий Мужчина'",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Мужской",
+    "image": "images/he/Футболка Ностоящий Мужчина.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "M",
+    "color": "Kulrang",
+    "description": "Erkaklar uchun futbolka. 'Настоящий Мужчина' yozuvi bilan.",
+    "sliderImages": [
+      "images/he/Футболка Ностоящий Мужчина.jpg",
+      "images/he/Футболка Ностоящий Мужчина_v2.jpg"
+    ]
+  },
+  {
+    "id": 26, 
+    "name": "Futbolka BMW",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Мужской",
+    "image": "images/he/Футболка BMW .jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "XXL",
+    "color": "Ko'k",
+    "description": "BMW logotipli erkaklar futbolkasi. Sport avtomobillarini sevuvchilar uchun.",
+    "sliderImages": [
+      "images/he/Футболка BMW .jpg",
+      "images/he/Футболка BMW_v2.jpg"
+    ]
+  },
+  {
+    "id": 27, 
+    "name": "Bolalar Futbolkasi (bolalar)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Детский",
+    "image": "images/baby/футболка.png",
+    "isFavorite": false,
+    "type": "block",
+    "size": "S",
+    "color": "Sariq",
+    "description": "Bolalar uchun yozgi sariq futbolka. Eng yaxshi matodan.",
+    "sliderImages": [
+      "images/baby/футболка.png",
+      "images/baby/футболка_v2.png"
+    ]
+  },
+  {
+    "id": 28, 
+    "name": "Chaqaloq o'yinchoq",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Детский",
+    "image": "images/baby/baby.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "Kichik",
+    "color": "Moviy",
+    "description": "Yumshoq va xavfsiz chaqaloq o'yinchoq. Yangi tug'ilgan chaqaloqlar uchun mos.",
+    "sliderImages": [
+      "images/baby/baby.jpg",
+      "images/baby/baby_v2.jpg"
+    ]
+  },
+  {
+    "id": 29, 
+    "name": "Bolalar aravachasi",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Детский",
+    "image": "images/baby/Калияска.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "Standart",
+    "color": "Kulrang",
+    "description": "Yengil va qulay bolalar aravachasi. Sayohatlar uchun ideal.",
+    "sliderImages": [
+      "images/baby/Калияска.jpg",
+      "images/baby/Калияска_v2.jpg"
+    ]
+  },
+  {
+    "id": 30, 
+    "name": "Blender Raf (yangi)",
+    "price": 1200000,
+    "discount": 10,
+    "category": "Битовой техника",
+    "image": "images/raf.jpg",
+    "isFavorite": false,
+    "type": "block",
+    "size": "O'rta",
+    "color": "Qora",
+    "description": "Raf blenderining yangilangan modeli. Ko'p funksiyali va samarali.",
+    "sliderImages": [
+      "images/raf.jpg",
+      "images/raf_v3.jpg"
+    ]
+  },
+  {
+    "id": 31, 
+    "name": "Zamonaviy Krossovka (erkaklar)",
+    "price": 350000,
+    "discount": 10,
+    "image": "images/shoe1.jpg",
+    "videoUrl": "",
+    "type": "image",
+    "category": "Poyabzallar",
+    "size": "42",
+    "color": "Qora",
+    "description": "<p>Yuqori sifatli materiallardan tayyorlangan zamonaviy erkaklar krossovkasi. Yugurish va kundalik foydalanish uchun juda qulay. Oyoqqa mos tushadigan dizayn va yengillik hissi.</p><ul><li>Material: Sintetik to'qima, kauchuk taglik</li><li>Yumshoq ichki astar</li><li>Nafas oluvchi dizayn</li></ul>",
+    "sliderImages": [
+      "images/shoe1.jpg",
+      "images/shoe1_var2.jpg",
+      "images/shoe1_var3.jpg"
+    ]
+  },
+  {
+    "id": 32, 
+    "name": "Smart Soat X1 (sport)",
+    "price": 800000,
+    "discount": 0,
+    "image": "images/watch1.jpg",
+    "videoUrl": "",
+    "type": "image",
+    "category": "Aksessuarlar",
+    "size": "Universal",
+    "color": "Kumush",
+    "description": "<p>Bluetooth ulanish, yurak urish tezligini o'lchash, qadam hisoblagich va xabarnomalar kabi ko'plab funksiyalarga ega zamonaviy smart soat. Sport va kundalik hayot uchun ideal yechim.</p>",
+    "sliderImages": [
+      "images/watch1.jpg",
+      "images/watch1_var2.jpg",
+      "images/watch1_var3.jpg"
+    ]
+  },
+  {
+    "id": 33, 
+    "name": "Bluetooth Dinamik MegaBass (portativ)",
+    "price": 250000,
+    "discount": 15,
+    "image": "images/speaker1.jpg",
+    "videoUrl": "",
+    "type": "image",
+    "category": "Elektronika",
+    "size": "Kichik",
+    "color": "Qizil",
+    "description": "<p>Yuqori sifatli ovoz va kuchli baslar bilan ta'minlovchi portativ Bluetooth dinamik. 10 soatgacha batareya quvvati va suvga chidamlilik.</p>",
+    "sliderImages": [
+      "images/speaker1.jpg",
+      "images/speaker1_v2.jpg"
+    ]
+  },
+  {
+    "id": 34, 
+    "name": "Erkaklar Jinsi Shimlar (klassik)",
+    "price": 400000,
+    "discount": 5,
+    "image": "images/jeans1.jpg",
+    "videoUrl": "",
+    "type": "image",
+    "category": "Kiyim-kechak",
+    "size": "32/32",
+    "color": "Ko'k",
+    "description": "<p>Qulay va zamonaviy erkaklar jinsi shimlari. Kundalik foydalanish va har xil uslublar bilan mos keladi. Yuqori sifatli denim.</p>",
+    "sliderImages": [
+      "images/jeans1.jpg",
+      "images/jeans1_v2.jpg"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Simsiz Naushnik AirBeat (Bluetooth)",
+    "price": 550000,
+    "discount": 0,
+    "image": "images/headphone1.jpg",
+    "videoUrl": "",
+    "type": "image",
+    "category": "Elektronika",
+    "size": "Universal",
+    "color": "Oq",
+    "description": "<p>Kristaldek tiniq ovoz va qulay dizayn. Faol shovqinni o'chirish funksiyasi bilan musiqadan zavqlaning. Simsiz qulaylik.</p>",
+    "sliderImages": [
+      "images/headphone1.jpg",
+      "images/headphone1_var2.jpg",
+      "images/headphone1_var3.jpg"
+    ]
+  }
+]

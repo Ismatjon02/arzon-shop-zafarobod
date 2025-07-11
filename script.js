@@ -39,13 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Global o'zgaruvchilar
     let currentSlide = 0; // Header slider uchun o'zgaruvchi
-    let allProducts = [];
+    
     let favoriteProducts = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
     let orderedProducts = JSON.parse(localStorage.getItem('orderedProducts')) || [];
 
     // --- 2. Ma'lumotlarni yuklash (fetchProducts) ---
     async function fetchProducts() {
         try {
+
+
             const response = await fetch('products.json');
             let fetchedProducts = await response.json();
 
@@ -60,13 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
             productsContainer.innerHTML = '<p>Mahsulotlar yuklanmadi. Iltimos, keyinroq urinib koʻring.</p>';
         }
     }
+    // const productsContainer = document.getElementById('products-container');
 
     // --- 3. Mahsulotlarni asosiy sahifaga chiqarish (renderProducts) ---
     function renderProducts(productsToRender) {
-        productsContainer.innerHTML = '';
+        productsContainer.innerHTML =``;
 
         if (productsToRender.length === 0) {
-            productsContainer.innerHTML = '<p class="no-results-message">Hech qanday mahsulot topilmadi.</p>';
+            productsContainer.innerHTML = '<p class="no-results-message">Товары не найдены.</p>';
             return;
         }
 
@@ -98,15 +101,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
 
             productCard.innerHTML = `
-                <div class="product-card-image-container">
-                    ${mediaHtml}
-                    <i class="favorite-icon ${heartClass}" data-product-id="${product.id}"></i>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">${product.name}</h3>
-                    <p class="product-price">${discountedPrice.toLocaleString('uz-UZ')} UZS ${discountHtml}</p>
-                    <button class="order-button" data-product-id="${product.id}">Buyurtma berish</button>
-                </div>
+                 <div class="product-card-image-container">
+        ${mediaHtml}
+        <i class="favorite-icon ${heartClass}" data-product-id="${product.id}"></i>
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">${product.name}</h3>
+        <p class="product-price">${discountedPrice.toLocaleString('uz-UZ')} смн ${discountHtml}</p>
+        <div class="product-actions">
+            <button class="order-button" data-product-id="${product.id}">Заказ</button>
+            <button class="new-more-info-button" data-product-id="${product.id}">Подробный</button>
+        </div>
+    </div>
             `;
             productsContainer.appendChild(productCard);
 
@@ -664,48 +670,891 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// 
-document.addEventListener('DOMContentLoaded', () => {
-  const productsContainer = document.getElementById('products-container');
+// ////////////////
 
-  productsContainer.addEventListener('click', () => {
-    // Bu yerda siz yangi ochiladigan sahifa manzilini ko'rsatasiz
-    window.location.href = 'product-details.html'; // o'rniga kerakli sahifa nomini yozing
-  });
+
+// 
+// 
+
+
+
+
+// // script.js faylingiz
+
+// // ===========================================
+// // Global o'zgaruvchilar va DOM elementlarini tanlash
+// // ===========================================
+
+// let allProducts = []; // Barcha mahsulotlar shu massivda saqlanadi
+
+// // ====== Header Slider elementlari ======
+// const headerSliderImagesContainer = document.querySelector('.header-slider');
+// // headerSliderImages ni tekshirib tanlaymiz, chunki u mavjud bo'lmasa, xato bermasin
+// const headerSliderImages = headerSliderImagesContainer ? headerSliderImagesContainer.querySelectorAll('.slide-item img') : [];
+// let currentSlide = 0;
+// let headerSliderInterval;
+
+// // ====== Yangi sodda modal elementlari ======
+// const newSimpleModal = document.getElementById('new-simple-modal');
+// // Element topilmasa null bo'ladi, shuning uchun tekshiramiz
+// const newCloseButton = newSimpleModal ? newSimpleModal.querySelector('.new-close-button') : null;
+// const newModalImg = document.getElementById('new-modal-img');
+// const newModalName = document.getElementById('new-modal-name');
+
+// // span elementlarini tanlash
+// const newModalPriceValue = document.getElementById('new-modal-price-value');
+// const newModalModelValue = document.getElementById('new-modal-model-value');
+// const newModalColorValue = document.getElementById('new-modal-color-value');
+// const newModalDescriptionValue = document.getElementById('new-modal-description-value'); // Batafsil uchun
+// const newModalSizeValue = document.getElementById('new-modal-size-value'); // Size uchun
+
+
+// // Ota-ona <p> elementlarini tanlash (ularni yashirish/ko'rsatish uchun)
+// // QuerySelector ishlatamiz, chunki ular ID emas, classga ega
+// const newModalPriceParagraph = document.querySelector('.new-modal-price');
+// const newModalModelParagraph = document.querySelector('.new-modal-model');
+// const newModalColorParagraph = document.querySelector('.new-modal-color');
+// const newModalDescriptionParagraph = document.querySelector('.new-modal-description'); // Batafsil uchun
+// const newModalSizeParagraph = document.querySelector('.new-modal-size'); // Size uchun
+
+// // //////////////////////////////
+
+
+// // ///////////////////////////
+
+
+//     // Modal ichidagi slayder elementlari
+// const newModalSliderContainer = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider-container') : null;
+// const newModalSlider = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider') : null;
+// const newModalSliderPrevBtn = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider-prev-btn') : null;
+// const newModalSliderNextBtn = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider-next-btn') : null;
+
+// let currentModalSlideIndex = 0; // Modal slayderining joriy rasmi indeksi
+// let currentModalImages = []; // Joriy mahsulot rasmlari massivi
+
+
+// // ====== MODAL ICHIDAGI SLAYDERNI YANGILASH FUNKSIYASI ======
+// function updateModalSlider() {
+//     // Agar modal slayder elementlari topilmasa yoki rasm bo'lmasa, ishlamaymiz
+//     if (!newModalSlider || !newModalSliderContainer || currentModalImages.length === 0) {
+//         if (newModalSliderContainer) {
+//             newModalSliderContainer.style.display = 'none'; // Slayderni yashiramiz
+//         }
+//         return;
+//     }
+    
+//     newModalSliderContainer.style.display = 'block'; // Slayderni ko'rsatamiz
+
+//     // Slayder ichini tozalab, joriy mahsulot rasmlarini qo'shamiz
+//     newModalSlider.innerHTML = ''; // Oldingi rasmlarni o'chiramiz
+//     currentModalImages.forEach(imagePath => {
+//         const img = document.createElement('img'); // Yangi img tegi yaratamiz
+//         img.src = imagePath; // Rasm manzilini o'rnatamiz
+//         img.alt = "Mahsulot rasmi";
+//         newModalSlider.appendChild(img); // Slayder diviga qo'shamiz
+//     });
+
+//     // Joriy indeksni rasm soniga moslashtiramiz (chegaradan chiqmasligi uchun)
+//     if (currentModalSlideIndex >= currentModalImages.length) {
+//         currentModalSlideIndex = 0; // Oxirgi rasmdan keyin birinchisiga o'tadi
+//     }
+//     if (currentModalSlideIndex < 0) {
+//         currentModalSlideIndex = currentModalImages.length - 1; // Birinchi rasmdan oldin oxirgisiga o'tadi
+//     }
+
+//     // Slayderni surish (joriy rasm ko'rinishi uchun)
+//     // Har bir rasm 100% kenglikda, shuning uchun (indeks * 100%) suramiz
+//     newModalSlider.style.transform = `translateX(-${currentModalSlideIndex * 100}%)`;
+
+//     // Slayderda bittadan ortiq rasm bo'lsa, oldinga/orqaga tugmalarini ko'rsatamiz
+//     if (currentModalImages.length <= 1) {
+//         if (newModalSliderPrevBtn) newModalSliderPrevBtn.style.display = 'none';
+//         if (newModalSliderNextBtn) newModalSliderNextBtn.style.display = 'none';
+//     } else {
+//         if (newModalSliderPrevBtn) newModalSliderPrevBtn.style.display = 'block';
+//         if (newModalSliderNextBtn) newModalSliderNextBtn.style.display = 'block';
+//     }
+// }
+
+
+
+
+
+
+// // ///////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // //////////
+
+
+// // Mahsulotlarni ko'rsatish uchun konteyner
+// const productsContainer = document.getElementById('products-container'); // HTML'dagi ID'ga mos kelishi kerak
+
+// // ===========================================
+// // Funksiyalar
+// // ===========================================
+
+// // ====== Yangi sodda modalni ochish funksiyasi ======
+// function openNewSimpleModal(product) {
+//     if (!product) {
+//         console.error("openNewSimpleModal: Mahsulot ma'lumotlari topilmadi!");
+//         return;
+//     }
+
+//     console.log("Mufassal modal ochilmoqda...", product.name);
+
+//     // Modal kontentini to'ldirish
+//     if (newModalImg) newModalImg.src = product.image || '';
+//     if (newModalName) newModalName.textContent = product.name || 'Nomsiz mahsulot';
+
+//     // Narx
+//     if (product.price) {
+//         const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
+//         if (newModalPriceValue) newModalPriceValue.textContent = discountedPrice.toLocaleString('uz-UZ') + ' СМН';
+//         if (newModalPriceParagraph) newModalPriceParagraph.style.display = 'block';
+//     } else {
+//         if (newModalPriceParagraph) newModalPriceParagraph.style.display = 'none';
+//     }
+
+//     // Model
+//     if (product.model) {
+//         if (newModalModelValue) newModalModelValue.textContent = product.model;
+//         if (newModalModelParagraph) newModalModelParagraph.style.display = 'block';
+//     } else {
+//         if (newModalModelParagraph) newModalModelParagraph.style.display = 'none';
+//     }
+
+//     // Rangi
+//     if (product.color) { // JSONda 'color' maydoni bo'lishi shart
+//         if (newModalColorValue) newModalColorValue.textContent = product.color;
+//         if (newModalColorParagraph) newModalColorParagraph.style.display = 'block';
+//     } else {
+//         if (newModalColorParagraph) newModalColorParagraph.style.display = 'none';
+//     }
+
+//     // Batafsil (description)
+//     if (product.description) { // JSONda 'description' maydoni bo'lishi shart
+//         // TextContent bilan xavfsizlikni ta'minlaymiz
+//         if (newModalDescriptionValue) newModalDescriptionValue.textContent = product.description;
+//         if (newModalDescriptionParagraph) newModalDescriptionParagraph.style.display = 'block';
+//     } else {
+//         if (newModalDescriptionParagraph) newModalDescriptionParagraph.style.display = 'none';
+//     }
+
+
+//  // Размер 
+//     if (product.size) { // JSONda 'description' maydoni bo'lishi shart
+//         // TextContent bilan xavfsizlikni ta'minlaymiz
+//         if (newModalSizeValue) newModalSizeValue.textContent = product.size;
+//         if (newModalSizeParagraph) newModalSizeParagraph.style.display = 'block';
+//     } else {
+//         if (newModalSizeParagraph) newModalSizeParagraph.style.display = 'none';
+//     }
+
+
+
+    
+//     // Modalni ko'rsatish
+//     if (newSimpleModal) {
+//         newSimpleModal.style.display = 'flex';
+//         document.body.style.overflow = 'hidden'; // Orqa fonni skroll qilishni to'xtatish
+//     } else {
+//         console.error("newSimpleModal elementi topilmadi, modal ochilmadi.");
+//     }
+// }
+
+
+
+// // ====== Yangi sodda modalni yopish funksiyasi ======
+// function closeNewSimpleModal() {
+//     if (newSimpleModal) { // newSimpleModal mavjudligini tekshirish
+//         newSimpleModal.style.display = 'none'; // Modalni yashirish
+//         document.body.style.overflow = ''; // Orqa fon skrollini qaytarish
+//     }
+// }
+
+
+
+// // //////////
+
+// function startHeaderSlider() {
+//     if (headerSliderImages.length > 0) {
+//         clearInterval(headerSliderInterval); // Oldingi taymerni to'xtatamiz
+
+//         // Barcha rasmlardan 'active' klassini olib tashlaymiz
+//         headerSliderImages.forEach(img => img.classList.remove('active'));
+
+//         // Joriy indeksni tekshiramiz
+//         if (currentSlide >= headerSliderImages.length || currentSlide < 0) {
+//             currentSlide = 0; // Agar indeks chegaradan chiqsa, birinchisiga qaytaramiz
+//         }
+
+//         // Joriy rasmga 'active' klassini qo'shamiz
+//         if (headerSliderImages[currentSlide]) {
+//             headerSliderImages[currentSlide].classList.add('active');
+//         } else {
+//             console.warn(`startHeaderSlider: headerSliderImages[${currentSlide}] elementi topilmadi.`);
+//             return;
+//         }
+
+//         // Slayderni avtomatik almashtirish uchun taymer o'rnatamiz
+//         headerSliderInterval = setInterval(() => {
+//             if (headerSliderImages[currentSlide]) {
+//                 headerSliderImages[currentSlide].classList.remove('active');
+//             }
+//             currentSlide = (currentSlide + 1) % headerSliderImages.length; // Keyingi rasmga o'tamiz
+//             if (headerSliderImages[currentSlide]) {
+//                 headerSliderImages[currentSlide].classList.add('active');
+//             }
+//         }, 3000); // Har 3 sekundda
+//     } else {
+//         console.warn("Header slider images topilmadi yoki massiv bo'sh. Slayder ishga tushirilmadi.");
+//     }
+// }
+
+
+
+
+
+// // 
+// // /////////
+
+// // ====== Mahsulotlarni sahifaga render qilish funksiyasi ======
+// function renderProducts(productsToRender) {
+//     if (!productsContainer) {
+//         console.error("renderProducts: productsContainer elementi topilmadi!");
+//         return;
+//     }
+//     productsContainer.innerHTML = ''; // Kontentni tozalash
+
+//     productsToRender.forEach(product => {
+//         const productCard = document.createElement('div');
+//         productCard.classList.add('product-card');
+
+//         // Rasm va media HTML (agar videolar bo'lsa)
+//         let mediaHtml = '';
+//         if (product.type === 'video' && product.video) {
+//             mediaHtml = `<video src="${product.video}"   autoplay playsinline loop class="product-image"></video>`;
+//         } else if (product.image) {
+//             mediaHtml = `<img src="${product.image}" alt="${product.name}" class="product-image">`;
+//         } else {
+//             mediaHtml = `<div class="no-image-placeholder">Rasm yo'q</div>`;
+//         }
+
+//         // Sevimli ikonka klassi
+//         const isFav = false; // Buni localStoragedan olishingiz kerak
+//         const heartClass = isFav ? 'fas' : 'far'; // fas - to'liq, far - bo'sh
+
+//         // Chegirma HTML
+//         let discountHtml = '';
+//         let discountedPrice = product.price;
+//         if (product.discount && product.discount > 0) {
+//             discountedPrice = product.price * (1 - product.discount / 100);
+//             discountHtml = `<span class="original-price">${product.price.toLocaleString('uz-UZ')} UZS</span> <span class="discount-percentage">-${product.discount}%</span>`;
+//         }
+
+//         productCard.innerHTML = `
+//             <div class="product-card-image-container">
+//                 ${mediaHtml}
+//                 <i class="favorite-icon ${heartClass}" data-product-id="${product.id}"></i>
+//             </div>
+//             <div class="product-info">
+//                 <h3 class="product-name">${product.name}</h3>
+//                 <p class="product-price">${discountedPrice.toLocaleString('uz-UZ')} СМН ${discountHtml}</p>
+//                 <div class="product-actions">
+//                     <button class="order-button" data-product-id="${product.id}">Заказ</button>
+//                     <button class="new-more-info-button" data-product-id="${product.id}">Подробный</button>
+//                 </div>
+//             </div>
+//         `;
+//         productsContainer.appendChild(productCard);
+//     });
+// }
+
+
+// // ===========================================
+// // Event Listenerlar
+// // ===========================================
+
+// // Yopish tugmasiga click
+// if (newCloseButton) {
+//     newCloseButton.addEventListener('click', closeNewSimpleModal);
+// } else {
+//     console.warn("newCloseButton elementi topilmadi! 'new-close-button' klassini tekshiring.");
+// }
+
+// // Modalning o'ziga click (kontentga emas)
+// if (newSimpleModal) {
+//     newSimpleModal.addEventListener('click', (event) => {
+//         if (event.target === newSimpleModal) {
+//             closeNewSimpleModal();
+//         }
+//     });
+// } else {
+//     console.warn("newSimpleModal elementi topilmadi! 'new-simple-modal' ID'sini tekshiring.");
+// }
+
+// // ESC tugmasi bosilganda yopish
+// document.addEventListener('keydown', (event) => {
+//     if (newSimpleModal && event.key === 'Escape' && newSimpleModal.style.display === 'flex') {
+//         closeNewSimpleModal();
+//     }
+// });
+
+// // ===== `productsContainer` dagi click event listeneri (delegatsiya) =====
+// // Bu event listener mahsulot kartalari ichidagi tugmalarni tinglaydi
+// if (productsContainer) {
+//     productsContainer.addEventListener('click', (e) => {
+//         console.log("productsContainer click eventi ishga tushdi. Bosilgan element:", e.target);
+
+//         // "Mufassal" tugmasiga bosilganda sodda modalni ochish
+//         // e.target.closest() bilan tugmani yoki uning ota-onasini topamiz
+//         const newMoreInfoButton = e.target.closest('.new-more-info-button');
+//         if (newMoreInfoButton) {
+//             console.log(" 'Mufassal' tugmasi bosildi.");
+//             const productId = parseInt(newMoreInfoButton.dataset.productId);
+//             console.log("Mahsulot ID:", productId);
+
+//             const product = allProducts.find(p => p.id === productId);
+//             if (product) {
+//                 console.log("Topilgan mahsulot:", product);
+//                 openNewSimpleModal(product); // Yangi sodda modalni ochamiz
+//             } else {
+//                 console.warn(`Mahsulot ID ${productId} allProducts massivida topilmadi.`);
+//             }
+//             e.stopPropagation(); // Boshqa eventlarning ishlashini to'xtatish
+//             return;
+//         }
+
+//         // Sevimli ikonkasiga bosilganda (agar mavjud bo'lsa)
+//         const favoriteIcon = e.target.closest('.favorite-icon');
+//         if (favoriteIcon) {
+//             e.stopPropagation();
+//             const productId = parseInt(favoriteIcon.dataset.productId);
+//             // toggleFavorite(productId); // Bu funksiyani o'zingiz yozishingiz kerak
+//             console.log(`Favorite icon clicked for product ID: ${productId}`);
+//             return;
+//         }
+
+//         // Buyurtma tugmasiga bosilganda (agar mavjud bo'lsa)
+//         const orderButton = e.target.closest('.order-button');
+//         if (orderButton) {
+//             e.stopPropagation();
+//             const productId = parseInt(orderButton.dataset.productId);
+//             const product = allProducts.find(p => p.id === productId);
+//             if (product) {
+//                 // openOrderFormModal(product); // Bu funksiyani o'zingiz yozishingiz kerak
+//                 console.log(`Order button clicked for product ID: ${productId}`);
+//             }
+//             return;
+//         }
+//     });
+// } else {
+//     console.error("productsContainer topilmadi! HTMLda ID 'products-container' mavjudligini tekshiring.");
+// }
+
+// // ===========================================
+// // Ma'lumotlarni yuklash va init
+// // ===========================================
+
+// // Mahsulotlarni JSON faylidan yuklash
+// fetch('products.json')
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error(`HTTP error! status: ${response.status}`);
+//         }
+//         return response.json();
+//     })
+//     .then(data => {
+//         allProducts = data;
+//         console.log("Mahsulotlar JSON dan yuklandi:", allProducts);
+//         renderProducts(allProducts); // Mahsulotlarni sahifaga render qilish
+//         startHeaderSlider(); // Header slayderni ma'lumotlar yuklangandan keyin ishga tushirish
+//     }).catch(error => console.error('Mahsulotlarni yuklashda xato:', error));
+
+    
+    
+
+
+    
+
+
+
+
+
+
+
+// /////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+// script.js faylingiz
+
+// ===========================================
+// Global o'zgaruvchilar va DOM elementlarini tanlash
+// ===========================================
+
+let allProducts = []; // Barcha mahsulotlar shu massivda saqlanadi
+
+// ====== Header Slider elementlari ======
+// Agar header slayder HTMLda mavjud bo'lmasa, bu elementlar `null` yoki bo'sh bo'ladi.
+// Bu qism sizning oldingi kodingizdan olingan. Agar header slayder butunlay keraksiz bo'lsa,
+// bu o'zgaruvchilarni va `startHeaderSlider` funksiyasini ham olib tashlashingiz mumkin.
+const headerSliderImagesContainer = document.querySelector('.header-slider');
+const headerSliderImages = headerSliderImagesContainer ? headerSliderImagesContainer.querySelectorAll('.slide-item img') : [];
+let currentSlide = 0;
+let headerSliderInterval;
+
+// ====== Yangi sodda modal elementlari ======
+const newSimpleModal = document.getElementById('new-simple-modal');
+const newCloseButton = newSimpleModal ? newSimpleModal.querySelector('.new-close-button') : null;
+
+// Modal ichidagi slayder elementlari
+const newModalSliderContainer = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider-container') : null;
+const newModalSlider = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider') : null; // Xato tuzatildi: .olquerySelector -> .querySelector
+const newModalSliderPrevBtn = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider-prev-btn') : null;
+const newModalSliderNextBtn = newSimpleModal ? newSimpleModal.querySelector('.new-modal-slider-next-btn') : null;
+
+let currentModalSlideIndex = 0; // Modal slayderining joriy rasmi indeksi
+let currentModalImages = []; // Joriy mahsulot rasmlari massivi
+
+// Modal ichidagi matn elementlari (spanlar)
+const newModalName = document.getElementById('new-modal-name');
+const newModalPriceValue = document.getElementById('new-modal-price-value');
+const newModalModelValue = document.getElementById('new-modal-model-value');
+const newModalColorValue = document.getElementById('new-modal-color-value');
+const newModalDescriptionValue = document.getElementById('new-modal-description-value');
+const newModalSizeValue = document.getElementById('new-modal-size-value');
+
+// Ota-ona <p> elementlari (ularni yashirish/ko'rsatish uchun)
+const newModalPriceParagraph = document.querySelector('.new-modal-price');
+const newModalModelParagraph = document.querySelector('.new-modal-model');
+const newModalColorParagraph = document.querySelector('.new-modal-color');
+const newModalDescriptionParagraph = document.querySelector('.new-modal-description');
+const newModalSizeParagraph = document.querySelector('.new-modal-size');
+
+// Mahsulotlarni ko'rsatish uchun konteyner
+const productsContainer = document.getElementById('products-container'); // HTML'dagi ID'ga mos kelishi kerak
+
+// ===========================================
+// Funksiyalar
+// ===========================================
+
+// ====== MODAL ICHIDAGI SLAYDERNI YANGILASH FUNKSIYASI ======
+function updateModalSlider() {
+    // Agar modal slayder elementlari topilmasa yoki rasm bo'lmasa, ishlamaymiz
+    if (!newModalSlider || !newModalSliderContainer || currentModalImages.length === 0) {
+        if (newModalSliderContainer) {
+            newModalSliderContainer.style.display = 'none'; // Slayderni yashiramiz
+        }
+        return;
+    }
+
+    newModalSliderContainer.style.display = 'block'; // Slayderni ko'rsatamiz
+
+    // Slayder ichini tozalab, joriy mahsulot rasmlarini qo'shamiz
+    newModalSlider.innerHTML = ''; // Oldingi rasmlarni o'chiramiz
+    currentModalImages.forEach(imagePath => {
+        const img = document.createElement('img'); // Yangi img tegi yaratamiz
+        img.src = imagePath; // Rasm manzilini o'rnatamiz
+        img.alt = "Mahsulot rasmi";
+        newModalSlider.appendChild(img); // Slayder diviga qo'shamiz
+    });
+
+    // Joriy indeksni rasm soniga moslashtiramiz (chegaradan chiqmasligi uchun)
+    if (currentModalSlideIndex >= currentModalImages.length) {
+        currentModalSlideIndex = 0; // Oxirgi rasmdan keyin birinchisiga o'tadi
+    }
+    if (currentModalSlideIndex < 0) {
+        currentModalSlideIndex = currentModalImages.length - 1; // Birinchi rasmdan oldin oxirgisiga o'tadi
+    }
+
+    // Slayderni surish (joriy rasm ko'rinishi uchun)
+    // Har bir rasm 100% kenglikda, shuning uchun (indeks * 100%) suramiz
+    newModalSlider.style.transform = `translateX(-${currentModalSlideIndex * 100}%)`;
+
+    // Slayderda bittadan ortiq rasm bo'lsa, oldinga/orqaga tugmalarini ko'rsatamiz
+    if (currentModalImages.length <= 1) {
+        if (newModalSliderPrevBtn) newModalSliderPrevBtn.style.display = 'none';
+        if (newModalSliderNextBtn) newModalSliderNextBtn.style.display = 'none';
+    } else {
+        if (newModalSliderPrevBtn) newModalSliderPrevBtn.style.display = 'block';
+        if (newModalSliderNextBtn) newModalSliderNextBtn.style.display = 'block';
+    }
+}
+
+// ====== Yangi sodda modalni ochish funksiyasi ======
+function openNewSimpleModal(product) {
+    if (!product) {
+        console.error("openNewSimpleModal: Mahsulot ma'lumotlari topilmadi!");
+        return;
+    }
+
+    console.log("Mufassal modal ochilmoqda...", product.name);
+
+    // Modal kontentini to'ldirish
+    if (newModalName) newModalName.textContent = product.name || 'Nomsiz mahsulot';
+
+    // Narx
+    if (product.price) {
+        const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
+        if (newModalPriceValue) newModalPriceValue.textContent = discountedPrice.toLocaleString('uz-UZ') + ' СМН';
+        if (newModalPriceParagraph) newModalPriceParagraph.style.display = 'block';
+    } else {
+        if (newModalPriceParagraph) newModalPriceParagraph.style.display = 'none';
+    }
+
+    // Model
+    if (product.model) {
+        if (newModalModelValue) newModalModelValue.textContent = product.model;
+        if (newModalModelParagraph) newModalModelParagraph.style.display = 'block';
+    } else {
+        if (newModalModelParagraph) newModalModelParagraph.style.display = 'none';
+    }
+
+    // Rangi
+    if (product.color) { // JSONda 'color' maydoni bo'lishi shart
+        if (newModalColorValue) newModalColorValue.textContent = product.color;
+        if (newModalColorParagraph) newModalColorParagraph.style.display = 'block';
+    } else {
+        if (newModalColorParagraph) newModalColorParagraph.style.display = 'none';
+    }
+
+    // Batafsil (description)
+    if (product.description) { // JSONda 'description' maydoni bo'lishi shart
+        if (newModalDescriptionValue) newModalDescriptionValue.textContent = product.description;
+        if (newModalDescriptionParagraph) newModalDescriptionParagraph.style.display = 'block';
+    } else {
+        if (newModalDescriptionParagraph) newModalDescriptionParagraph.style.display = 'none';
+    }
+
+    // Размер (Size)
+    if (product.size) {
+        if (newModalSizeValue) newModalSizeValue.textContent = product.size;
+        if (newModalSizeParagraph) newModalSizeParagraph.style.display = 'block';
+    } else {
+        if (newModalSizeParagraph) newModalSizeParagraph.style.display = 'none';
+    }
+
+    // Modal slayderini tayyorlash va ishga tushirish
+    currentModalSlideIndex = 0; // Har safar modal ochilganda 1-rasmdan boshlaymiz
+    // Agar `product.images` massivi bo'lsa, uni ishlatamiz. Aks holda, faqat `product.image`ni massivga solamiz.
+    currentModalImages = product.images || (product.image ? [product.image] : []);
+    updateModalSlider(); // Slayderni yangilaymiz
+
+    // Modalni ko'rsatish
+    if (newSimpleModal) {
+        newSimpleModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Orqa fonni skroll qilishni to'xtatish
+    } else {
+        console.error("newSimpleModal elementi topilmadi, modal ochilmadi.");
+    }
+}
+
+// ====== Yangi sodda modalni yopish funksiyasi ======
+function closeNewSimpleModal() {
+    if (newSimpleModal) { // newSimpleModal mavjudligini tekshirish
+        newSimpleModal.style.display = 'none'; // Modalni yashirish
+        document.body.style.overflow = ''; // Orqa fon skrollini qaytarish
+    }
+}
+
+// ====== Header slayderini ishga tushirish funksiyasi ======
+// Bu funksiya sizning so'rovingizga ko'ra qoldirildi, chunki siz uni olib tashlashni so'ramadingiz.
+// Agar header slayder HTMLda mavjud bo'lmasa, bu ogohlantirish beradi va ishlamaydi.
+function startHeaderSlider() {
+    if (headerSliderImages.length > 0) {
+        clearInterval(headerSliderInterval); // Oldingi taymerni to'xtatamiz
+
+        // Barcha rasmlardan 'active' klassini olib tashlaymiz
+        headerSliderImages.forEach(img => img.classList.remove('active'));
+
+        // Joriy indeksni tekshiramiz
+        if (currentSlide >= headerSliderImages.length || currentSlide < 0) {
+            currentSlide = 0; // Agar indeks chegaradan chiqsa, birinchisiga qaytaramiz
+        }
+
+        // Joriy rasmga 'active' klassini qo'shamiz
+        if (headerSliderImages[currentSlide]) {
+            headerSliderImages[currentSlide].classList.add('active');
+        } else {
+            console.warn(`startHeaderSlider: headerSliderImages[${currentSlide}] elementi topilmadi.`);
+            return;
+        }
+
+        // Slayderni avtomatik almashtirish uchun taymer o'rnatamiz
+        headerSliderInterval = setInterval(() => {
+            if (headerSliderImages[currentSlide]) {
+                headerSliderImages[currentSlide].classList.remove('active');
+            }
+            currentSlide = (currentSlide + 1) % headerSliderImages.length; // Keyingi rasmga o'tamiz
+            if (headerSliderImages[currentSlide]) {
+                headerSliderImages[currentSlide].classList.add('active');
+            }
+        }, 3000); // Har 3 sekundda
+    } else {
+        console.warn("Header slider images topilmadi yoki massiv bo'sh. Slayder ishga tushirilmadi.");
+    }
+}
+
+// ====== Mahsulotlarni sahifaga render qilish funksiyasi ======
+function renderProducts(productsToRender) {
+    if (!productsContainer) {
+        console.error("renderProducts: productsContainer elementi topilmadi!");
+        return;
+    }
+    productsContainer.innerHTML = ''; // Kontentni tozalash
+
+    productsToRender.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+
+        // Rasm va media HTML (agar videolar bo'lsa)
+        let mediaHtml = '';
+        if (product.type === 'video' && product.video) {
+            mediaHtml = `<video src="${product.video}" controls autoplay loop class="product-image"></video>`;
+        } else if (product.image) {
+            mediaHtml = `<img src="${product.image}" alt="${product.name}" class="product-image">`;
+        } else {
+            mediaHtml = `<div class="no-image-placeholder">Rasm yo'q</div>`;
+        }
+
+        // Sevimli ikonka klassi (localStorage'dan olinadi)
+        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        const isFav = favorites.includes(product.id);
+        const heartClass = isFav ? 'fas' : 'far'; // fas - to'liq, far - bo'sh
+
+        // Chegirma HTML
+        let discountHtml = '';
+        let discountedPrice = product.price;
+        if (product.discount && product.discount > 0) {
+            discountedPrice = product.price * (1 - product.discount / 100);
+            discountHtml = `<span class="original-price">${product.price.toLocaleString('uz-UZ')} UZS</span> <span class="discount-percentage">-${product.discount}%</span>`;
+        }
+
+        productCard.innerHTML = `
+            <div class="product-card-image-container">
+                ${mediaHtml}
+                <i class="favorite-icon ${heartClass}" data-product-id="${product.id}"></i>
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">${product.name}</h3>
+                <p class="product-price">${discountedPrice.toLocaleString('uz-UZ')} СМН ${discountHtml}</p>
+                <div class="product-actions">
+                    <button class="order-button" data-product-id="${product.id}">Заказ</button>
+                    <button class="new-more-info-button" data-product-id="${product.id}">Подробный</button>
+                </div>
+            </div>
+        `;
+        productsContainer.appendChild(productCard);
+    });
+}
+
+// ====== Favorit mahsulotlarni boshqarish funksiyasi (ilgari kommentariyada edi, endi to'liq) ======
+function toggleFavorite(productId) {
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const index = favorites.indexOf(productId);
+
+    if (index > -1) {
+        favorites.splice(index, 1);
+        console.log(`Mahsulot ID ${productId} favoritlardan olib tashlandi.`);
+    } else {
+        favorites.push(productId);
+        console.log(`Mahsulot ID ${productId} favoritlarga qo'shildi.`);
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    // Sahifadagi va modal ichidagi favorit ikonkalarni yangilaymiz
+    const productCardIcon = document.querySelector(`.product-card [data-product-id="${productId}"].favorite-icon`);
+    if (productCardIcon) {
+        if (favorites.includes(productId)) {
+            productCardIcon.classList.remove('far');
+            productCardIcon.classList.add('fas');
+        } else {
+            productCardIcon.classList.remove('fas');
+            productCardIcon.classList.add('far');
+        }
+    }
+    // Agar modal ochiq bo'lsa va joriy mahsulotga tegishli bo'lsa, uni ham yangilaymiz
+    const favoriteIconModal = newSimpleModal ? newSimpleModal.querySelector('.favorite-icon-modal') : null;
+    if (favoriteIconModal && parseInt(favoriteIconModal.dataset.productId) === productId) {
+        if (favorites.includes(productId)) {
+            favoriteIconModal.classList.remove('far');
+            favoriteIconModal.classList.add('fas');
+        } else {
+            favoriteIconModal.classList.remove('fas');
+            favoriteIconModal.classList.add('far');
+        }
+    }
+}
+
+
+// ===========================================
+// Event Listenerlar
+// ===========================================
+
+// Yopish tugmasiga click
+if (newCloseButton) {
+    newCloseButton.addEventListener('click', closeNewSimpleModal);
+} else {
+    console.warn("newCloseButton elementi topilmadi! 'new-close-button' klassini tekshiring.");
+}
+
+// Modalning o'ziga click (kontentga emas)
+if (newSimpleModal) {
+    newSimpleModal.addEventListener('click', (event) => {
+        if (event.target === newSimpleModal) {
+            closeNewSimpleModal();
+        }
+    });
+} else {
+    console.warn("newSimpleModal elementi topilmadi! 'new-simple-modal' ID'sini tekshiring.");
+}
+
+// ESC tugmasi bosilganda yopish
+document.addEventListener('keydown', (event) => {
+    if (newSimpleModal && event.key === 'Escape' && newSimpleModal.style.display === 'flex') {
+        closeNewSimpleModal();
+    }
 });
 
+// ====== Modal slayderi navigatsiya tugmalari ======
+if (newModalSliderPrevBtn) {
+    newModalSliderPrevBtn.addEventListener('click', () => {
+        currentModalSlideIndex--;
+        updateModalSlider();
+    });
+}
+if (newModalSliderNextBtn) {
+    newModalSliderNextBtn.addEventListener('click', () => {
+        currentModalSlideIndex++;
+        updateModalSlider();
+    });
+}
+
+// ===== `productsContainer` dagi click event listeneri (delegatsiya) =====
+// Bu event listener mahsulot kartalari ichidagi tugmalarni tinglaydi
+if (productsContainer) {
+    productsContainer.addEventListener('click', (e) => {
+        // "Mufassal" tugmasiga bosilganda sodda modalni ochish
+        const newMoreInfoButton = e.target.closest('.new-more-info-button');
+        if (newMoreInfoButton) {
+            const productId = parseInt(newMoreInfoButton.dataset.productId);
+            const product = allProducts.find(p => p.id === productId);
+            if (product) {
+                openNewSimpleModal(product); // Yangi sodda modalni ochamiz
+            } else {
+                console.warn(`Mahsulot ID ${productId} allProducts massivida topilmadi.`);
+            }
+            e.stopPropagation(); // Boshqa eventlarning ishlashini to'xtatish
+            return;
+        }
+
+        // Sevimli ikonkasiga bosilganda
+        const favoriteIcon = e.target.closest('.favorite-icon');
+        if (favoriteIcon) {
+            e.stopPropagation();
+            const productId = parseInt(favoriteIcon.dataset.productId);
+            toggleFavorite(productId); // Favorit funksiyasini chaqiramiz
+            return;
+        }
+
+        // Buyurtma tugmasiga bosilganda
+        const orderButton = e.target.closest('.order-button');
+        if (orderButton) {
+            e.stopPropagation();
+            const productId = parseInt(orderButton.dataset.productId);
+            const product = allProducts.find(p => p.id === productId);
+            if (product) {
+                // WhatsApp funksiyasi o'chirilgan, bu yerga boshqa buyurtma logikasini qo'shishingiz mumkin
+                console.log(`Buyurtma tugmasi bosildi, mahsulot ID: ${productId}`);
+            }
+            return;
+        }
+    });
+} else {
+    console.error("productsContainer topilmadi! HTMLda ID 'products-container' mavjudligini tekshiring.");
+}
+
+// ====== Modal ichidagi "Favorit" ikonka ======
+// Bu yerga ham event listener qo'shish kerak, chunki bu icon ham alohida bosilishi mumkin
+const favoriteIconModal = newSimpleModal ? newSimpleModal.querySelector('.favorite-icon-modal') : null;
+if (favoriteIconModal) {
+    favoriteIconModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productId = parseInt(favoriteIconModal.dataset.productId);
+        toggleFavorite(productId);
+    });
+}
+
+
+// ====== Modal ichidagi "Buyurtma berish" tugmasi ======
+const orderButtonModal = newSimpleModal ? newSimpleModal.querySelector('.order-button-modal') : null;
+if (orderButtonModal) {
+    orderButtonModal.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const productId = parseInt(orderButtonModal.dataset.productId);
+        const product = allProducts.find(p => p.id === productId);
+        if (product) {
+            // WhatsApp funksiyasi o'chirilgan, bu yerga boshqa buyurtma logikasini qo'shishingiz mumkin
+            console.log(`Modal buyurtma tugmasi bosildi, mahsulot: ${product.name}`);
+        }
+    });
+}
+
+
+// ===========================================
+// Ma'lumotlarni yuklash va init
+// ===========================================
 
 
 
 
+// Mahsulotlarni JSON faylidan yuklash
+fetch('products.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        allProducts = data; // JSON fayli to'g'ridan-to'g'ri mahsulotlar massivi bo'ladi deb faraz qilinadi
+        console.log("Mahsulotlar JSON dan yuklandi:", allProducts);
+        renderProducts(allProducts); // Mahsulotlarni sahifaga render qilish
+        startHeaderSlider(); // Header slayderni ma'lumotlar yuklangandan keyin ishga tushirish (agar mavjud bo'lsa)
+    }).catch(error => console.error('Mahsulotlarni yuklashda xato:', error));
 
 
 
 
+    // 
+    // 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    

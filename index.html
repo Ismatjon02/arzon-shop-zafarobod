@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz">
+<!-- <html lang="uz"> -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,14 +24,13 @@
                     <div class="search-box">
             <input type="text" id="searchInput" placeholder="Mahsulot nomini yozing...">
         </div>
-
             </div>
             <div class="navbar-right">
                 <ul class="nav-links">
                     <li><a href="index.html">Asosi</a></li>
                     <li><a href="#" id="favorites-link"><i class="fas fa-heart"></i> Baholash (<span id="favorite-count">0</span>)</a></li>
                     <li><a href="#" id="orders-link"><i class="fas fa-box-open"></i> Buyurtma berilganlar (<span id="order-count">0</span>)</a></li>
-                    <li><a href="#">Biz haqimizda</a></li>
+                    <!-- <li><a href="#">Biz haqimizda</a></li> -->
                     <li class="dropdown">
                         <!-- <a href="#" class="dropbtn"><i class="fas fa-th-large"></i> </a> -->
                         <div class="dropdown-content">
@@ -60,9 +59,8 @@
     </header>
 
  <section class="categories-section">
-        <h2>Kategoriyalar</h2>
+        <h2>Каталог</h2>
         <div class="categories-wrapper">
-
             <button class="category-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
             <div class="categories-container" id="categories-container">
                 </div>
@@ -75,68 +73,13 @@
 
 
 
-<div id="product-details-modal" class="modal">
-    <div class="modal-content product-details-content">
-        <span class="close-button">&times;</span>
-        <div class="product-details-container">
-            <div class="product-details-media">
-                <img id="details-product-image" src="" alt="Mahsulot rasmi">
-                <video id="details-product-video" controls muted loop preload="none" style="display: none;">
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="product-details-info">
-                <h2 id="details-product-name"></h2>
-                <p class="details-product-price"><span id="details-product-price-value"></span> UZS</p>
-                <p id="details-product-description"></p>
-                <div class="product-details-actions">
-                    <button class="order-button details-order-button" data-product-id="">Buyurtma berish</button>
-                    <i class="favorite-icon details-favorite-icon" data-product-id=""></i>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
 <!--  -->
-
-
-<!-- <div id="products-container">
-  <button id="open-modal-btn">Mahsulotni ko‘rish</button>
-</div> -->
-
-<!-- Modal oynasi -->
-<div id="product-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Mahsulot tafsilotlari</h2>
-    <p>Bu yerda mahsulot haqida batafsil ma'lumot bo‘ladi.</p>
-  </div>
-</div>
-
-
-
-
-
-
-
-<!-- 
-     <main>
-        <section id="products-container" class="products-container">
-            </section>
-    </main> -->
     <main class="main-content">
         <aside class="left-ad">
             <img src="images/pngtree-a-logo-simple-and-minimalistic-image_301991.jpg" alt="Reklama 1">
         </aside>
         <section class="products-container" id="products-container">
+            <div style="width: 100px; height:100px; background: red; position: absolute; z-index: 1000; top: 10px;" class="pro"> dddd</div>
             </section>
         <aside class="right-ad">
             <img src="images/pngtree-letter-a-logo-png-image_1749377.jpg" alt="Reklama 2">
@@ -148,32 +91,11 @@
             <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a href="https://t.me/YOUR_TELEGRAM" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
-            <span><i class="fas fa-phone"></i> +998 (XX) XXX-XX-XX</span>
+            <span><i class="fas fa-phone"></i> + (XX) XXX-XX-XX</span>
         </div>
     </footer>
 
-<!-- vaqtinch -->
-    <!-- <div id="favorites-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Baholangan Mahsulotlar</h2>
-            <div id="favorites-list" class="product-grid">
-                </div>
-        </div>
-    </div> -->
-<!--  -->
 
-<!-- <div id="favorites-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Baholangan Mahsulotlar</h2>
-        <div class="favorites-summary"> <p>Jami mahsulotlar: <span id="favorites-total-count">0</span></p>
-            <p>Umumiy narx: <span id="favorites-total-price">0 UZS</span></p>
-        </div>
-        <div id="favorites-list" class="product-grid">
-            </div>
-        <button id="order-all-favorites-button" class="order-button full-width-button">Hammasini zakaz berish</button> </div>
-</div> -->
 
 <div id="favorites-modal" class="modal">
     <div class="modal-content">
@@ -208,7 +130,7 @@
             </div>
             <form id="order-whatsapp-form">
                 <label for="customer-phone">Telefon raqamingiz:</label>
-                <input type="tel" id="customer-phone" name="phone" required placeholder="+998 XX YYY YY YY">
+                <input type="tel" id="customer-phone" name="phone" required placeholder="+ XX YYY YY YY">
                 <label for="customer-comment">Izoh (ixtiyoriy):</label>
                 <textarea id="customer-comment" name="comment" rows="3"></textarea>
                 <button type="submit">WhatsApp orqali buyurtma berish</button>
@@ -222,24 +144,45 @@
 
 
 
-    <!-- <div id="products-container"></div> -->
 
-<!-- Xama maxsulotlardi zakas berish -->
 
-<!-- <div id="favorites-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Baholangan Mahsulotlar</h2>
-        <div class="favorites-summary"> <p>Jami mahsulotlar: <span id="favorites-total-count">0</span></p>
-            <p>Umumiy narx: <span id="favorites-total-price">0 UZS</span></p>
-        </div>
-        <div id="favorites-list" class="product-grid">
+
+
+
+
+<!--  -->
+<div id="new-simple-modal" class="new-simple-modal">
+    <div class="new-simple-modal-content">
+        <span class="new-close-button">&times;</span>
+        <div class="new-modal-details-wrapper">
+            <!-- <img id="new-modal-img" src="" alt="Mahsulot rasmi" class="new-modal-img"> -->
+            <!--  -->
+ <div class="new-modal-slider-container">
+                <div class="new-modal-slider">
+                    </div>
+                <button class="new-modal-slider-prev-btn">&lt;</button>
+                <button class="new-modal-slider-next-btn">&gt;</button>
             </div>
-        <button id="order-all-favorites-button" class="order-button full-width-button">Hammasini zakaz berish</button> </div>
-</div> -->
+            <!--  -->
 
 
+<div class="new-modal-info">
+    <h2 id="new-modal-name"></h2>
+    <p class="new-modal-price" style="display: none;">Цена: <span id="new-modal-price-value"></span></p>
+    <p class="new-modal-model" style="display: none;">Модель: <span id="new-modal-model-value"></span></p>
+    <p class="new-modal-color" style="display: none;">Цвет: <span id="new-modal-color-value"></span></p>
+    <p class="new-modal-description" style="display: none;">Информация:  <span id="new-modal-description-value"></span></p>
+    <p class="new-modal-size" style="display: none;">Размер: <span id="new-modal-size-value"></span></p>
 
+ <!--  -->
+ <div class="new-modal-actions">
+                    <i class="favorite-icon-modal far fa-heart" data-product-id=""></i>
+                </div>
+</div>
+            <!--  -->
+        </div>
+    </div>
+</div>
 
 
 

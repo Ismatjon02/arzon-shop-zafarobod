@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arzon onlayn do'kon - uy, bolalar, ayollar, erkaklar, sport mahsulotlari. Eng yaxshi narxlar!">
+    <meta name="keywords" content="arzon, onlayn do'kon, mahsulotlar, uy, bolalar, ayollar, erkaklar, erkaklar,erkaklar,erkaklar,erkaklar, sport, chegirmalar, buyurtma">
+    <meta name="author" content="Your Name">
+    <title>Arzon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="#" class="logo">
+                    <img src="images/transparent.png" alt="Arzon Logo">
+                    <span>Arzon-shop</span>
+                </a>
+            </div>
+            <div class="navbar-center">
+              
+                    <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Mahsulot nomini yozing...">
+        </div>
+
+            </div>
+            <div class="navbar-right">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Asosi</a></li>
+                    <li><a href="#" id="favorites-link"><i class="fas fa-heart"></i> Baholash (<span id="favorite-count">0</span>)</a></li>
+                    <li><a href="#" id="orders-link"><i class="fas fa-box-open"></i> Buyurtma berilganlar (<span id="order-count">0</span>)</a></li>
+                    <li><a href="#">Biz haqimizda</a></li>
+                    <li class="dropdown">
+                        <!-- <a href="#" class="dropbtn"><i class="fas fa-th-large"></i> </a> -->
+                        <div class="dropdown-content">
+                            <a href="#" data-category="uy">Uy mahsulotlari</a>
+                            <a href="#" data-category="bolalar">Bolalar mahsulotlari</a>
+                            <a href="#" data-category="ayollar">Ayollar mahsuloti</a>
+                            <a href="#" data-category="erkaklar">Erkaklar mahsuloti</a>                           
+                        </div>
+                    </li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle">
+                            <i class="fas fa-sun"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="header-slider">
+            <img src="images/slider1.png" alt="Slider Image 1" class="active">
+            <img src="images/slider2.jpg" alt="Slider Image 2">
+            <img src="images/slider3.png" alt="Slider Image 3">
+            <img src="images/slider4.jpg" alt="Slider Image 4">
+            <img src="images/slider5.jpg" alt="Slider Image 5">
+        </div>
+    </header>
+
+ <section class="categories-section">
+        <h2>Kategoriyalar</h2>
+        <div class="categories-wrapper">
+
+            <button class="category-arrow left-arrow"><i class="fas fa-chevron-left"></i></button>
+            <div class="categories-container" id="categories-container">
+                </div>
+            <button class="category-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+
+<!--  -->
+
+
+
+<div id="product-details-modal" class="modal">
+    <div class="modal-content product-details-content">
+        <span class="close-button">&times;</span>
+        <div class="product-details-container">
+            <div class="product-details-media">
+                <img id="details-product-image" src="" alt="Mahsulot rasmi">
+                <video id="details-product-video" controls muted loop preload="none" style="display: none;">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="product-details-info">
+                <h2 id="details-product-name"></h2>
+                <p class="details-product-price"><span id="details-product-price-value"></span> UZS</p>
+                <p id="details-product-description"></p>
+                <div class="product-details-actions">
+                    <button class="order-button details-order-button" data-product-id="">Buyurtma berish</button>
+                    <i class="favorite-icon details-favorite-icon" data-product-id=""></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--  -->
+
+
+<!-- <div id="products-container">
+  <button id="open-modal-btn">Mahsulotni ko‘rish</button>
+</div> -->
+
+<!-- Modal oynasi -->
+<div id="product-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Mahsulot tafsilotlari</h2>
+    <p>Bu yerda mahsulot haqida batafsil ma'lumot bo‘ladi.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- 
+     <main>
+        <section id="products-container" class="products-container">
+            </section>
+    </main> -->
+    <main class="main-content">
+        <aside class="left-ad">
+            <img src="images/pngtree-a-logo-simple-and-minimalistic-image_301991.jpg" alt="Reklama 1">
+        </aside>
+        <section class="products-container" id="products-container">
+            </section>
+        <aside class="right-ad">
+            <img src="images/pngtree-letter-a-logo-png-image_1749377.jpg" alt="Reklama 2">
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://t.me/YOUR_TELEGRAM" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
+            <span><i class="fas fa-phone"></i> +998 (XX) XXX-XX-XX</span>
+        </div>
+    </footer>
+
+<!-- vaqtinch -->
+    <!-- <div id="favorites-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Baholangan Mahsulotlar</h2>
+            <div id="favorites-list" class="product-grid">
+                </div>
+        </div>
+    </div> -->
+<!--  -->
+
+<!-- <div id="favorites-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Baholangan Mahsulotlar</h2>
+        <div class="favorites-summary"> <p>Jami mahsulotlar: <span id="favorites-total-count">0</span></p>
+            <p>Umumiy narx: <span id="favorites-total-price">0 UZS</span></p>
+        </div>
+        <div id="favorites-list" class="product-grid">
+            </div>
+        <button id="order-all-favorites-button" class="order-button full-width-button">Hammasini zakaz berish</button> </div>
+</div> -->
+
+<div id="favorites-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Baholangan Mahsulotlar</h2>
+        <div class="favorites-summary"> <p>Jami mahsulotlar: <span id="favorites-total-count">0</span></p>
+            <p>Umumiy narx: <span id="favorites-total-price">0 UZS</span></p>
+        </div>
+        <div id="favorites-list" class="product-grid">
+            </div>
+        <button id="order-all-favorites-button" class="order-button full-width-button">Hammasini zakaz berish</button> </div>
+</div>
+
+
+
+    <div id="orders-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Buyurtma Berilgan Mahsulotlar</h2>
+            <div id="orders-list" class="product-grid">
+                </div>
+        </div>
+    </div>
+
+    <div id="order-form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Buyurtma Berish</h2>
+            <div class="order-form-details">
+                <img id="order-product-image" src="" alt="Mahsulot surati">
+                <h3 id="order-product-name"></h3>
+            </div>
+            <form id="order-whatsapp-form">
+                <label for="customer-phone">Telefon raqamingiz:</label>
+                <input type="tel" id="customer-phone" name="phone" required placeholder="+998 XX YYY YY YY">
+                <label for="customer-comment">Izoh (ixtiyoriy):</label>
+                <textarea id="customer-comment" name="comment" rows="3"></textarea>
+                <button type="submit">WhatsApp orqali buyurtma berish</button>
+            </form>
+        </div>
+    </div>
+
+
+
+<!--  -->
+
+
+
+    <!-- <div id="products-container"></div> -->
+
+<!-- Xama maxsulotlardi zakas berish -->
+
+<!-- <div id="favorites-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Baholangan Mahsulotlar</h2>
+        <div class="favorites-summary"> <p>Jami mahsulotlar: <span id="favorites-total-count">0</span></p>
+            <p>Umumiy narx: <span id="favorites-total-price">0 UZS</span></p>
+        </div>
+        <div id="favorites-list" class="product-grid">
+            </div>
+        <button id="order-all-favorites-button" class="order-button full-width-button">Hammasini zakaz berish</button> </div>
+</div> -->
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
