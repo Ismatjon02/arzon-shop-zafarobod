@@ -1554,6 +1554,7 @@ fetch('products.json')
     // 
     // 
 
+product.image
 
 
 

@@ -349,7 +349,7 @@
     "price": 50,
     "discount": 0,
     "category": "Часы",
-    "image": "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.51_0652ee31.jpg",
+    "image": "images/Часы/2025-07-10 в 18.50.51_0652ee31.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
@@ -363,16 +363,16 @@
     "price": 100,
     "discount": 0,
     "category": "Сумка",
-    "image": "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.51.41_6e847722.jpg",
+    "image": "images/Сумка/2025-07-10 в 18.51.41_6e847722.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
-    "color": "черный,розовый,серый цвет, синий",
+    "color": "черный,розовый,серый цвет, иний",
     "description": null,
     "images": [
-      "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.52.01_3da9dec3.jpg",
-      "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.52.02_9c884580.jpg",
-      "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.52.01_1d67c404.jpg"
+      "images/Сумка/2025-07-10 в 18.52.01_3da9dec3.jpg",
+      "images/Сумка/2025-07-10 в 18.52.02_9c884580.jpg",
+      "images/Сумка/2025-07-10 в 18.52.02_9c884580.jpg"
     ]
   }
 ]
