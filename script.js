@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             message += `*Umumiy narx:* ${totalOrderPrice.toLocaleString('uz-UZ')} UZS%0A`; // Qalin shrift va yangi qator
 
-            let whatsappNumber = "+992929642524";
+            let whatsappNumber = "+992929712524";
 
             const phoneNumber = prompt("Iltimos, telefon raqamingizni kiriting (Misol: 99292XXXXXX):");
 
