@@ -5,12 +5,12 @@
     "price": 120,
     "discount": 0,
     "category": "Электроника и бытовая техника",
-    "image": "images/Электроника и бытовая техника/Видео WhatsApp 2025-07-09 в 16.41.40_33a189ef.mp4",
+    "image": "images/Электроника и бытовая техника/images.jpeg",
     "isFavorite": false,
     "type": "video",
-    "videoUrl": "images/Электроника и бытовая техника/Видео WhatsApp 2025-07-09 в 16.41.40_33a189ef.mp4",
-    "size": "Katta",
-    "color": "Jigarrang",
+    "videoUrl": "images/Электроника и бытовая техника/2025-07-09в16.41.40_33a189ef.mp4",
+    "size": null,
+    "color": null,
     "description": null,
     "sliderImages": []
   },
@@ -22,15 +22,13 @@
     "price": 440,
     "discount": null,
     "category": "Электроника и бытовая техника",
-    "image": "images/Электроника и бытовая техника/Изображение WhatsApp 2025-07-09 в 23.38.14_a5d41541.jpg",
+    "image": "images/Электроника и бытовая техника/2025-07-09в23.38.14_a5d41541.jpg",
     "isFavorite": false,
     "type": "block",
-    "size": "30",
-    "description": "2л.4л.6л.4л.8л",
-    "sliderImages": [
-      "images/baby/vicco.jpg",
-      "images/baby/vicco_var2.jpg"
-    ]
+    "size": null,
+    "description": null,
+    "liter": "2л.4л.6л.4л.8л",
+    "images": null
   },
   {
     "id": 3,
@@ -40,15 +38,12 @@
     "price": 420,
     "discount": null,
     "category": "Электроника и бытовая техника",
-    "image": "images/Электроника и бытовая техника/Изображение WhatsApp 2025-07-09 в 23.44.07_0dd3f555.jpg",
+    "image": "images/Электроника и бытовая техника/23.44.07_0dd3f555.jpg",
     "isFavorite": false,
     "type": "block",
     "size": "30",
     "description": null,
-    "sliderImages": [
-      "images/baby/vicco.jpg",
-      "images/baby/vicco_var2.jpg"
-    ]
+    "images": null
   },
  
   {
@@ -57,15 +52,13 @@
     "price": 280,
     "discount": null,
     "category": "Электроника и бытовая техника",
-    "image": "images/Электроника и бытовая техника/Изображение WhatsApp 2025-07-09 в 23.51.37_1ebcd4e8.jpg",
+    "image": "images/Электроника и бытовая техника/23.51.37_1ebcd4e8.jpg",
     "isFavorite": false,
     "type": "block",
     "size": null,
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/футболка.png"
-    ]
+    "images": null
   },
   {
     "id": 5,
@@ -73,16 +66,13 @@
     "price": 110,
     "discount": 0,
     "category": "Электроника и бытовая техника",
-    "image": "images/Электроника и бытовая техника/Изображение WhatsApp 2025-07-10 в 00.20.37_b77b0fae.jpg",
+    "image": "images/Электроника и бытовая техника/00.20.37_b77b0fae.jpg",
     "isFavorite": false,
     "type": "block",
     "size": null,
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg"
-    ]
+    "images": null
   },
   {
     "id": 6,
@@ -90,16 +80,13 @@
     "price": 80,
     "discount": 0,
     "category": "Электроника и бытовая техника",
-    "image": "images/Электроника и бытовая техника/Изображение WhatsApp 2025-07-10 в 00.21.46_5140826b.jpg",
+    "image": "images/Электроника и бытовая техника/00.21.46_5140826b.jpg",
     "isFavorite": false,
     "type": "block",
     "size": null,
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg"
-    ]
+    "images": null
   },
   {
     "id": 7,
@@ -107,16 +94,13 @@
     "price": 170,
     "discount": 0,
     "category": "Женской мир",
-    "image": "images/she/Изображение WhatsApp 2025-07-09 в 06.52.34_365091f3.jpg",
+    "image": "images/she/06.52.34_365091f3.jpg",
     "isFavorite": false,
     "type": "block",
     "size": "Стандарт",
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg"
-    ]
+    "images":null
   },
    {
     "id": 8,
@@ -124,16 +108,13 @@
     "price": 120,
     "discount": 0,
     "category": "Женской мир",
-    "image": "images/she/Изображение WhatsApp 2025-07-10 в 09.16.24_af9795e3.jpg",
+    "image": "images/she/09.16.24_af9795e3.jpg",
     "isFavorite": false,
     "type": "block",
     "size": " 50/52/54/56/58 ",
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Изображение WhatsApp 2025-07-10 в 09.16.24_af9795e3.jpg",
-      "images/she/Изображение WhatsApp 2025-07-10 в 09.16.24_af9795e3.jpg"
-    ]
+    "images": null
   },
 
      {
@@ -145,12 +126,12 @@
     "image": "images/she/images.jpeg",
     "isFavorite": false,
     "type": "video",
-    "videoUrl": "images/she/Видео WhatsApp 2025-07-10 в 09.23.04_c5b5b3f9.mp4",
+    "videoUrl": "images/she/09.23.04_c5b5b3f9.mp4",
     "size": "Стандарт",
     "model": "Бишкек",
     "color": null,
     "description": null,
-    "sliderImages": []
+    "images": null
   },
        {
     "id": 10,
@@ -158,14 +139,14 @@
     "price": 130,
     "discount": 0,
     "category": "Женской мир",
-    "image": "images/she/Изображение WhatsApp 2025-07-10 в 09.24.08_35d50d38.jpg",
+    "image": "images/she/09.24.08_35d50d38.jpg",
     "isFavorite": false,
     "type": "block",
     "size": "50/52/54/56",
     "model": "Бишкек",
     "color": null,
     "description": null,
-    "sliderImages": []
+    "mages": null
   },
    {
     "id":11,
@@ -173,27 +154,25 @@
     "price": 110,
     "discount": 0,
     "category": "Женской мир",
-    "image": "images/she/Изображение WhatsApp 2025-07-10 в 09.25.53_3c045551.jpg",
+    "image": "images/she/09.25.53_3c045551.jpg",
     "isFavorite": false,
     "type": "block",
     "size": "46/48/50/52",
-    "color": "красный, черный, коричневый, розовый, зеленый.",
+    "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg"
-    ]
+    "images": null
+    
   },
    {
     "id": 12,
-    "name": "Набори дег",
+    "name": "Набори Казан",
     "price": 550,
     "discount": 0,
     "category": "Пасуда",
-    "image": "images/Пасуда/Изображение WhatsApp 2025-07-10 в 09.47.31_0682d644.jpg",
+    "image": "images/Пасуда/09.47.31_0682d644.jpg",
     "isFavorite": false,
     "type": "block",
-    "size": "2.3лт 4лт 6лт 9.3лт  3.6лт (Маленький) ",
+    "liter": "2.3л, 4л, 6л, 9.3л,  3.6л ",
     "color": null,
     "description": null,
     "sliderImages": [
@@ -203,14 +182,14 @@
   },
      {
     "id": 13,
-    "name": "Бакал 6 шт",
+    "name": "Бакал ",
     "price": 50,
     "discount": 0,
     "category": "Пасуда",
-    "image": "images/Пасуда/Изображение WhatsApp 2025-07-10 в 09.54.45_fe679e99.jpg",
+    "image": "images/Пасуда/09.54.45_fe679e99.jpg",
     "isFavorite": false,
     "type": "block",
-    "size":null,
+    "pcs":"6",
     "color": null,
     "description": null,
     "sliderImages": [
@@ -224,37 +203,30 @@
     "price": 65,
     "discount": 0,
     "category": "Пасуда",
-    "image": "images/Пасуда/Изображение WhatsApp 2025-07-10 в 09.55.25_f8291dc6.jpg",
+    "image": "images/Пасуда/09.55.25_f8291dc6.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg"
-    ]
+    "images": null
   },
   {
     "id": 15,
-    "name": "Богема 9шт",
+    "name": "Богема",
     "price": 420,
     "discount": 0,
     "category": "Пасуда",
-    "image": "images/Пасуда/Изображение WhatsApp 2025-07-10 в 09.56.47_7df7f995.jpg",
+    "image": "images/Пасуда/09.56.47_7df7f995.jpg",
     "isFavorite": false,
     "type": "block",
-    "size":null,
-    "color": null,
+    "pcs":"9",
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg"
-    ]
+    "images":null
   },
   {
     "id": 16,
-    "name": "64 Предмета",
+    "name": "Конплект посуда (64 Предмета)",
     "price": 1200,
     "discount": 0,
     "category": "Пасуда",
@@ -264,8 +236,8 @@
     "videoUrl": "images/Пасуда/Видео WhatsApp 2025-07-10 в 09.58.25_6ea6f87b.mp4",
     "size": null,
     "color": null,
-    "description": " Пиёла 12шт,  Коса 12шт, Тарелка(06) -12шт, Тарелка(07)-12шт, Тарелка(10)-2шт, Овал(10)-4шт, Чойник 2шт×2крышка, Салатник 6шт",
-    "sliderImages": []
+    "pcs":" Пиёла 12шт,  Коса 12шт, Тарелка(06) -12шт, Тарелка(07)-12шт, Тарелка(10)-2шт, Овал(10)-4шт, Чойник 2шт×2крышка, Салатник 6шт",
+    "images": null
   },
     {
     "id": 17,
@@ -273,16 +245,13 @@
     "price": 240,
     "discount": 0,
     "category": "Пасуда",
-    "image": "images/Пасуда/Изображение WhatsApp 2025-07-10 в 09.59.32_52294d0e.jpg",
+    "image": "images/Пасуда/09.59.32_52294d0e.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
     "color": null,
     "description": null,
-    "sliderImages": [
-      "images/she/Патинка.jpg",
-      "images/she/Патинка_v2.jpg" 
-    ]
+    "images": null
   },
   {
     "id": 18,
@@ -290,16 +259,13 @@
     "price": 110,
     "discount": 0,
     "category": "Сумка",
-    "image": "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.53.54_435e34a8.jpg",
+    "image": "images/Сумка/8.53.54_435e34a8.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
-    "color": "черный,розовый,серый цвет",
+    "color": null,
     "description": null,
-    "images": [
-      "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.53.54_40dfaadd.jpg",
-      "images/Сумка/Изображение WhatsApp 2025-07-10 в 18.53.55_dc00e98c.jpg"
-    ]
+    "images":null
   },
     {
     "id": 19,
@@ -307,20 +273,13 @@
     "price": 50,
     "discount": 0,
     "category": "Часы",
-    "image": "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.06_f7f571a2.jpg",
+    "image": "images/Часы/18.50.06_f7f571a2.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
     "color": null,
     "description": null,
-    "images": [
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.49_98340dfb.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.56_4f0c79d4.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.49_2d90e2d9.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.54_74c68d33.jpg",
-        "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.53_f7d433da.jpg"
-      
-    ]
+    "images": null
   },
   {
     "id": 20,
@@ -328,20 +287,13 @@
     "price": 50,
     "discount": 0,
     "category": "Часы",
-    "image": "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.45_4c890d21.jpg",
+    "image": "images/Часы/18.50.45_4c890d21.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,
     "color": null,
     "description": null,
-    "images": [
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.45_47bcea0e.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.46_8e46ca63.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.47_f1f7788f.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.51_27307e22.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.51_b83e1a18.jpg",
-      "images/Часы/Изображение WhatsApp 2025-07-10 в 18.50.52_e3902b66.jpg"
-    ]
+    "images": null
   },
   {
     "id": 21,
@@ -349,7 +301,7 @@
     "price": 50,
     "discount": 0,
     "category": "Часы",
-    "image": "images/Часы/2025-07-10 в 18.50.51_0652ee31.jpg",
+    "image": "images/Часы/18.50.51_0652ee31.jpg",
     "isFavorite": false,
     "type": "block",
     "size":null,

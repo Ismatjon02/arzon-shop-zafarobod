@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- YANGI: Kategoriyalarni yuklash va chiqarish (renderCategories) ---
     function renderCategories() {
-        const categories = ['Barchasi']; // Barcha mahsulotlarni ko'rsatish uchun "Barchasi" kategoriyasi
+        const categories = ['Все продукты']; // Barcha mahsulotlarni ko'rsatish uchun "Все продукты" kategoriyasi
         const categoryImages = {}; // Kategoriyalar uchun rasmlarni saqlash
 
         allProducts.forEach(product => {
@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // categoriesContainer ni tozalash
         categoriesContainer.innerHTML = '';
-        // Navbar dropdown ni tozalash (faqat "Barchasi" qoladi)
-        dropdownContent.innerHTML = '<a href="#" data-category="all">Barchasi</a>';
+        // Navbar dropdown ni tozalash (faqat "Все продукты" qoladi)
+        dropdownContent.innerHTML = '<a href="#" data-category="all">Все продукты</a>';
 
 
         categories.forEach(category => {
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categoryCard.dataset.category = category; // Kategoriyani data atributiga saqlash
 
             let categoryImageUrl = '';
-            if (category === 'Barchasi') {
+            if (category === 'Все продукты') {
                 categoryImageUrl = 'images/all_products_icon.png'; // Barcha mahsulotlar uchun umumiy ikonka
             } else {
                 categoryImageUrl = categoryImages[category] || 'images/default_category.png'; // Agar rasm topilmasa, default rasm
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // YANGI: Kategoriyalar bo'yicha mahsulotlarni filterlash funksiyasi
     function filterProductsByCategory(category) {
         let filteredProducts = [];
-        if (category === 'Barchasi') {
+        if (category === 'Все продукты') {
             filteredProducts = allProducts;
         } else {
             filteredProducts = allProducts.filter(p => p.category === category);
@@ -590,11 +590,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentOrderingProduct) {
             // Faqat bitta mahsulot buyurtma berilayotgan bo'lsa
             const discountedPrice = currentOrderingProduct.price * (1 - (currentOrderingProduct.discount || 0) / 100);
-            message = `*Yangi buyurtma! <br>` +
-                      `*Mahsulot:* ${currentOrderingProduct.name}%0A` +
-                      `*Narxi:* ${discountedPrice.toLocaleString('uz-UZ')} UZS%0A` +
-                      `*Surati:* ${window.location.origin}/${currentOrderingProduct.image}%0A` +
-                      `*Telefon raqami:* ${phoneNumber}%0A` +
+            message = `*Yangi buyurtma!*` +
+                      `*Mahsulot:* ${currentOrderingProduct.name} ` +
+                      `*Narxi:* ${discountedPrice.toLocaleString('uz-UZ')} смн ` +
+                      `*Surati:* ${window.location.origin}/${currentOrderingProduct.image} ` +
+                      `*Telefon raqami:* ${phoneNumber} ` +
                       `*Izoh:* ${comment || 'Yo‘q'}`;
 
 
@@ -641,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`, '_blank');
 
         closeModal('order-form-modal');
-        alert('Buyurtmangiz WhatsApp orqali yuborildi!');
+        alert('Мы отправили ваш товар через WhatsApp. Доставим в течение недели.');
     });
 
     themeToggle.addEventListener('click', () => {
@@ -1148,12 +1148,22 @@ const newModalColorValue = document.getElementById('new-modal-color-value');
 const newModalDescriptionValue = document.getElementById('new-modal-description-value');
 const newModalSizeValue = document.getElementById('new-modal-size-value');
 
+const newModalLiterValue = document.getElementById('new-modal-liter-value');
+const newModalMaterialValue = document.getElementById('new-modal-material-value');
+const newModalPcsValue = document.getElementById('new-modal-pcs-value');
+
+
 // Ota-ona <p> elementlari (ularni yashirish/ko'rsatish uchun)
 const newModalPriceParagraph = document.querySelector('.new-modal-price');
 const newModalModelParagraph = document.querySelector('.new-modal-model');
 const newModalColorParagraph = document.querySelector('.new-modal-color');
 const newModalDescriptionParagraph = document.querySelector('.new-modal-description');
 const newModalSizeParagraph = document.querySelector('.new-modal-size');
+
+const newModalLiterParagraph = document.querySelector('.new-modal-liter');
+const newModalMaterialParagraph = document.querySelector('.new-modal-material');
+const newModalPcsParagraph = document.querySelector('.new-modal-pcs');
+
 
 // Mahsulotlarni ko'rsatish uchun konteyner
 const productsContainer = document.getElementById('products-container'); // HTML'dagi ID'ga mos kelishi kerak
@@ -1257,7 +1267,32 @@ function openNewSimpleModal(product) {
     } else {
         if (newModalSizeParagraph) newModalSizeParagraph.style.display = 'none';
     }
+// Литр (Liter)
+    if (product.liter) {
+        if (newModalLiterValue) newModalLiterValue.textContent = product.liter;
+        if (newModalLiterParagraph) newModalLiterParagraph.style.display = 'block';
+    } else {
+        if (newModalLiterParagraph) newModalLiterParagraph.style.display = 'none';
+    }
 
+    // Матерал (Material)
+    if (product.material) {
+        if (newModalMaterialValue) newModalMaterialValue.textContent = product.material;
+        if (newModalMaterialParagraph) newModalMaterialParagraph.style.display = 'block';
+    } else {
+        if (newModalMaterialParagraph) newModalMaterialParagraph.style.display = 'none';
+    }
+    // Шт (Pcs)
+    if (product.pcs) {
+        if (newModalPcsValue) newModalPcsValue.textContent = product.pcs;
+        if (newModalPcsParagraph) newModalPcsParagraph.style.display = 'block';
+    } else {
+        if (newModalPcsParagraph) newModalPcsParagraph.style.display = 'none';
+    }
+
+
+
+// 
     // Modal slayderini tayyorlash va ishga tushirish
     currentModalSlideIndex = 0; // Har safar modal ochilganda 1-rasmdan boshlaymiz
     // Agar `product.images` massivi bo'lsa, uni ishlatamiz. Aks holda, faqat `product.image`ni massivga solamiz.
@@ -1554,7 +1589,6 @@ fetch('products.json')
     // 
     // 
 
-product.image
 
 
 
